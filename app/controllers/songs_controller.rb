@@ -13,6 +13,7 @@ get '/songs/new' do
   end
 
 post '/songs' do
+  binding.pry
 @song = Song.create(name: params["Name"])
 @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
 if params["genres"]
